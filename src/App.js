@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
+import { darkTheme ,lightTheme} from "./utils/Themes";
 
 
 
@@ -19,7 +20,8 @@ const Wrapper =styled.div`
 `;
 
 function App() {
-  return (
+  return ( 
+    <ThemeProvider theme={lightTheme}>
    <Container>
     <Menu></Menu>
     <Main>
@@ -27,6 +29,7 @@ function App() {
       <Wrapper>Video cards</Wrapper>
     </Main>
    </Container>
+   </ThemeProvider>
   );
 }
 
